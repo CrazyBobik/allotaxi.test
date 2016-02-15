@@ -1,0 +1,30 @@
+<?php
+if ($breadcrumbs && count($breadcrumbs)) : ?>
+<div class="b-breadcrumbs" id="breadcrumbs">
+    <ul class="B_crumbBox">
+        <?php $i= 0; foreach ($breadcrumbs as $crumb) : ?>
+
+            <?php /*echo  ( $i? '<li><span>&gt;</span></li>' : '' ) */?>
+
+        <?php if ($crumb["url"] !== NULL AND count($breadcrumbs > 1)) :  ?>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a class="B_homeCrumb" itemprop="url" rel="Home" href="<?php echo $crumb["url"]?>" class="word">
+                <span itemprop="title"><?php echo $crumb["title"]?></span>
+            </a>
+        </li>
+
+        <?php else : ?>
+        <li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span ><?php echo $crumb['title']?></span>
+        </li>
+
+        <?php endif; ?>
+
+        <?php $i++ ?>
+
+        <?php endforeach; ?>
+    </ul>
+    <div class="b-breadcrumbs-clear" ></div>
+</div>
+
+<?php endif; ?>

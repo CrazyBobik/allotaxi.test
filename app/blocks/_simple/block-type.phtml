@@ -1,0 +1,16 @@
+<!-- Begin Content -->
+<? if ($node['name']):
+	K_Registry::write('h1', $node['name']) ?>
+
+	<div style="text-align: center;"><a name="content"><!--<h1><? /*=$node['name']*/
+			?></h1>--></a></div>
+
+<? endif; ?>
+<div id="system-message-container">
+	<div id="system-message">
+	</div>
+</div>
+<div class="g-plusone" data-size="small"></div>
+<div class="seo-text">
+	<?= $node['content'] ?>
+</div>

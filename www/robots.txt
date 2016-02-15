@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /adm/
+Disallow: /cache/
+Disallow: /cli/
+Disallow: /dump/
+Disallow: /images/
+Disallow: /spot/
+Disallow: /app/
+Disallow: /configs/
+Disallow: /libraries/
+Disallow: /logs/
+Disallow: /media/
+Disallow: /modules/
+Disallow: /plugins/
+Disallow: /framework/
+Disallow: /tmp/
+Disallow: /component/

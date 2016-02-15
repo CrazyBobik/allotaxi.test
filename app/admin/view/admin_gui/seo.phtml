@@ -1,0 +1,36 @@
+<div class="b-padded mainForm">
+<form id="x_form_node" enctype="application/x-www-form-urlencoded" method="post" action="/admin/tree/updateseo/id/<?=$this->node['tree_id']?>">
+    <div class="rowElem noborder admin-form-row">
+        <label>Каноническая ссылка:</label><div class="formRight">
+        <input class="b-field" id="node_name"  type="text" name="canonical" value="<?=$this->node['tree_meta_canonical']?>">
+        </div>
+        <div class="fix"></div>
+    </div>
+    <div class="rowElem noborder admin-form-row">
+        <label>Title :</label><div class="formRight">
+        <input class="b-field" id="node_name"  type="text" name="title" value="<?=$this->node['tree_meta_title']?>">
+        </div>
+        <div class="fix"></div>
+    </div>
+    <div class="rowElem noborder admin-form-row">
+        <label>Description:</label>
+        <div class="formRight">
+           <textarea class="class-description" id="id-description" name="description" style="margin: 0px -13px 0px 0px; height: 45px; width: 435px;"><?=$this->node['tree_meta_description']?></textarea>
+        </div>
+        <div class="fix">
+        </div>
+    </div>
+     <div class="rowElem noborder admin-form-row">
+        <label>Keywords:</label>
+        <div class="formRight">
+            <textarea class="class-keywords" id="id-keywords" name="keywords" style="margin: 0px -13px 0px 0px; height: 45px; width: 435px;"><?=$this->node['tree_meta_keywords']?></textarea>
+       </div>
+        <div class="fix">
+        </div>
+    </div>
+   
+    
+    <input class="b-button greyishBtn submitForm" id="update-button" type="submit" value="Обновить">
+</form>
+
+</div>

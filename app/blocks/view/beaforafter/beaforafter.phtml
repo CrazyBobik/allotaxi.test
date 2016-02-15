@@ -1,0 +1,33 @@
+<div class="item">
+<h2><?=$this->node['title']?></h2>
+
+<?if($this->node['beafor'] && $this->node['after']):?>
+<table border="0">
+<tbody>
+<tr>
+<td><a class="fancy" rel="gallery1" href="/images/<?=$this->node['beafor']?>" title="<?=$this->node['mtitle1']?>"><img src="/images/<?=$this->node['beafor']?>?w=400&h=252&zc=C"></a></td>
+<td><a class="fancy" rel="gallery1" href="/images/<?=$this->node['after']?>" title="<?=$this->node['mtitle2']?>"><img src="/images/<?=$this->node['after']?>?w=400&h=252&zc=C"></a></td>
+</tr>
+<tr>
+<td align="center"><?=$this->node['mtitle1']?></td>
+<td align="center"><?=$this->node['mtitle2']?></td>
+</tr>
+</tbody></table>
+
+<?elseif($this->node['beafor'] || $this->node['after']):?>
+
+<br/>
+
+<?$first = $this->node['beafor']? true: false?>
+
+<a id="single_image1" href="/images/<?=$first ? $this->node['beafor']: $this->node['after']?>" title="<?=$first ? $this->node['mtitle1']: $this->node['mtitle2']?>"><img src="/images/<?=$first ? $this->node['beafor']: $this->node['after']?>?w=800&&zc=C"></a>
+<br/>
+
+<span>
+   <?=$first ? $this->node['mtitle1']: $this->node['mtitle2']?>
+</span>
+
+<?endif;?>
+
+<br/>
+</div>

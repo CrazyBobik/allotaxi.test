@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title><?=$this->title?><?= K_SEO::pagePref();?></title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="keywords" content="<?=$this->mkeys?>">
+	<meta name="description" content="<?=$this->mdesc?>">
+	<?php
+	if(!empty($this->canonical)){
+		echo "<link rel='canonical' href='".$this->canonical."'>";
+	}
+	if (isset($_GET['page']) && intval($_GET['page']) > 1){
+		echo '<meta name="robots" content="noindex, follow">';
+	}
+
+	echo K_SEO::getNext();
+	echo K_SEO::getPrev();
+	?>
+
+	<link href="/usr/css/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+<!--	<base href="http://allotaxi.od.ua">-->
+
+	<!--[if lte IE 8]>
+	<script type="text/javascript">
+		alert('Вы используете устаревший браузер, пожалуйста обновите его!');
+		window.location = "http://windows.microsoft.com/ru-RU/internet-explorer/download-ie";
+	</script>
+	<![endif]-->
+
+
+	<link rel="stylesheet" href="/usr/css/normalize.css">
+	<link rel="stylesheet" href="/usr/css/style.css">
+	<link rel="stylesheet" href="/usr/css/responsive.css">
+	<link rel="stylesheet" href="/usr/css/sprite.css">
+
+	<script src="/usr/js/jquery-2.1.1.min.js"></script>
+	<script src="/usr/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/usr/js/menu.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<header id="main-head">
+		<div class="menu-bg-left"></div>
+		<nav id="main-menu">
+			<a class="main-menu-item" href="/">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					Главная
+				</div>
+			</a>
+			<a class="main-menu-item" href="/taxi-price">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					Услуги
+				</div>
+			</a>
+			<a class="main-menu-item" href="/luchshie-tsenyi">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					Цены
+				</div>
+			</a>
+
+			<div class="logo-order" itemscope itemtype="http://schema.org/Organization">
+				<a class="logo-bg" itemprop="url" href="http://allotaxi.od.ua/">
+					<img class="logo" src="/usr/img/logo-text.png" alt="Алло Такси - Круглосуточная служба такси в Одессе">
+				</a>
+			</div>
+
+			<a class="main-menu-item" href="/taxi-about-us">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					О компании
+				</div>
+			</a>
+			<a class="main-menu-item" href="/taxi-work">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					Вакансии
+				</div>
+			</a>
+			<a class="main-menu-item" href="/taxi-contact-us">
+				<div class="menu-item-bg"></div>
+				<div class="menu-item-text">
+					Контакты
+				</div>
+			</a>
+
+			<div class="toggle-menu">
+				<span></span>
+			</div>
+		</nav>
+		<div class="main-menu-line"></div>
+		<div class="responsive">
+			<nav id="main-menu-resp">
+				<a class="menu-resp-item" href="/">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						Главная
+					</div>
+				</a>
+				<a class="menu-resp-item" href="/taxi-price">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						Услуги
+					</div>
+				</a>
+				<a class="menu-resp-item" href="/luchshie-tsenyi">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						Цены
+					</div>
+				</a>
+				<a class="menu-resp-item" href="/taxi-about-us">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						О компании
+					</div>
+				</a>
+				<a class="menu-resp-item" href="/taxi-work">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						Вакансии
+					</div>
+				</a>
+				<a class="menu-resp-item" href="/taxi-contact-us">
+					<div class="menu-resp-item-bg"></div>
+					<div class="menu-item-text">
+						Контакты
+					</div>
+				</a>
+			</nav>
+		</div>
+
+		<div class="phones">
+			<div class="one-phone">
+				<div class="sprite life"></div>
+				093 970-32-22
+			</div>
+			<div class="one-phone">
+				<div class="sprite kievstar"></div>
+				097 802-32-22
+			</div>
+			<div class="one-phone">
+				<div class="sprite mts"></div>
+				066 976-32-22
+			</div>
+			<div class="one-phone">
+				<div class="sprite home"></div>
+				048 733-50-00
+			</div>
+		</div>
+		<div class="left-phones">
+			<div class="line-black"></div>
+			<div class="line-yellow"></div>
+			<div class="line-orange"></div>
+		</div>
+		<div class="right-phones">
+			<div class="line-black"></div>
+			<div class="line-yellow"></div>
+			<div class="line-orange"></div>
+		</div>
+
+		<div class="page-head">
+			<div class="page-head-title">
+				Алло такси
+			</div>
+			<h1>
+				<?= K_Registry::read('h1') ? K_Registry::read('h1') : 'Всегда везет!' ?>
+			</h1>
+		</div>
+
+		<?= K_Crumbs::Render();?>
+		<div class="grey-line"></div>
+	</header>
+	<main id="main-center">
+		<?php
+		if (isset($this->content['content']) && $this->content['content']) {
+			if (K_Url::get()->expPath[0] === 'taxi-novosti' && intval($_GET['page']) > 1){
+				echo $this->content['content'][0];
+			} else {
+				for ($i = 0; $i < sizeof($this->content['content']); $i++) {
+					echo $this->content['content'][$i];
+				}
+			}
+		} ?>
+	</main>
+	<footer id="main-foot">
+		<div class="foot-line"></div>
+		<div class="main-foot-first">
+			<? if (isset($this->content['footer']) && $this->content['footer']) {
+				for ($i = 0; $i < sizeof($this->content['footer']); $i++) {
+					echo $this->content['footer'][$i];
+				}
+			} ?>
+
+			<div class="foot-vk">
+				<div class="foot-news-title">
+					оставайтесь <br> с нами
+				</div>
+
+				<div class="vk-widget">
+					<script type="text/javascript" src="https://vk.com/js/api/openapi.js?121"></script>
+
+					<!-- VK Widget -->
+					<div id="vk_groups"></div>
+					<script type="text/javascript">
+						VK.Widgets.Group("vk_groups", {mode: 0, width: "290", height: "350", color1: 'FFFFFF', color2: '2B587A', color3: 'e8c43c'}, 20003922);
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<div class="left-foot-second"></div>
+		<div class="main-foot-second">
+			<div class="foot-second-content">
+				<img src="/usr/img/foot-logo.png" width="241" height="168" alt="">
+				<nav class="foot-nav">
+					<div class="second-foot-title">Навигация</div>
+					<a class="foot-nav-item" href="/">Главная</a>
+					<a class="foot-nav-item" href="/taxi-price">Услуги</a>
+					<a class="foot-nav-item" href="/luchshie-tsenyi">Цены</a>
+					<a class="foot-nav-item" href="/taxi-work">Вакансии</a>
+					<a class="foot-nav-item" href="/taxi-about-us">О компании</a>
+					<a class="foot-nav-item" href="/taxi-contact-us">Контакты</a>
+				</nav>
+				<div class="foot-phones">
+					<div class="second-foot-title">Заказать такси сейчас</div>
+					<div class="foot-phones-item">
+						<div class="sprite foot-phone-img foot-life"></div>
+						093 970-32-22
+					</div>
+					<div class="foot-phones-item">
+						<div class="sprite foot-phone-img foot-kievstar"></div>
+						097 802-32-22
+					</div>
+					<div class="foot-phones-item">
+						<div class="sprite foot-phone-img foot-mts"></div>
+						066 976-32-22
+					</div>
+					<div class="foot-phones-item">
+						<div class="sprite foot-phone-img foot-home"></div>
+						048 733-50-00
+					</div>
+				</div>
+				<div class="social">
+					<div class="second-foot-title">Присоединяйтесь к нам</div>
+					<a class="social-item" href="https://vk.com/cluballotaxi" target="_blank">
+						<div class="sprite social-item-img social-item-vk"></div>
+						вконтакте
+					</a>
+					<a class="social-item" href="https://www.facebook.com/allotaxiodessa" target="_blank">
+						<div class="sprite social-item-img social-item-fb"></div>
+						facebook
+					</a>
+					<a class="social-item" href="https://twitter.com/allotaxi_odessa" target="_blank">
+						<div class="sprite social-item-img social-item-tt"></div>
+						twitter
+					</a>
+				</div>
+			</div>
+
+			<div class="shashka-container">
+				<div class="shashka yellow"></div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+<!-- Start SiteHeart code -->
+<script type="text/javascript">
+	(function(){
+		var widget_id = 772497;
+		_shcp =[{widget_id : widget_id}];
+		var lang =(navigator.language || navigator.systemLanguage
+		|| navigator.userLanguage ||"en")
+			.substr(0,2).toLowerCase();
+		var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+		var hcc = document.createElement("script");
+		hcc.type ="text/javascript";
+		hcc.async =true;
+		hcc.src =("https:"== document.location.protocol ?"https":"http")
+			+"://"+ url;
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+	})();
+</script>
+<!-- End SiteHeart code -->
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-40923976-11']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function (d, w, c) {
+		(w[c] = w[c] || []).push(function() {
+			try {
+				w.yaCounter19919200 = new Ya.Metrika({id:19919200,
+					webvisor:true,
+					clickmap:true,
+					trackLinks:true,
+					accurateTrackBounce:true});
+			} catch(e) { }
+		});
+		var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+		if (w.opera == "[object Opera]") {
+			d.addEventListener("DOMContentLoaded", f, false);
+		} else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+</script>
+<script type="text/javascript">
+	window.___gcfg = {lang: 'ru'};
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/19919200" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
+
+
+
+
+<!--<div class="block call">
+	<a name="contacts"><div class="title_block">Контакты для заказа такси</div></a>
+	<div class="cl one">
+		<ul class="phones">
+			<li class="tl">048-733-5000</li>
+			<li class="ks">097-802-3222</li>
+			<li class="mt">066-976-3222</li>
+			<li class="lf">093-970-3222</li>
+		</ul>
+	</div>
+	<div class="cl two">
+		<span class="skype">allotaxi.od.ua</span>
+		<a href="skype:allotaxi.od.ua?call"><img src="/usr/css/img/icon-skype.png" /></a>
+	</div>
+	<div class="cl three">
+		<span data-link="https://vk.com/club12452407" target="_blank" class="jlinkn flink"><img src="/usr/images/system/taxi-vk.png" width="220px" height="320px" /></span>
+	</div>
+</div>-->

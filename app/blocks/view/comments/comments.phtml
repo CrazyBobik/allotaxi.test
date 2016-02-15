@@ -1,0 +1,34 @@
+<div class="feeds">
+
+<div id="flash-msg-nNote" class="nNote" style="display:none">
+	<p><strong></strong></p>
+</div>
+
+<form method="post" action="/ajax/addcomment" class="jot-form ajax-form">
+	<fieldset>
+	<input name="JotForm" value="afb440e6d02a81e6fe0710d2bc889edc" type="hidden">
+	<input name="JotNow" value="13918" type="hidden">
+	<input name="parent" value="" type="hidden">
+<label for="nameafb440e6d02a81e6fe0710d2bc889edc">Имя:<span style="font-weight:bold; color:#FF0000">*</span><br> <input tabindex="13919" name="name" size="40" id="nameafb440e6d02a81e6fe0710d2bc889edc" type="text"> </label><br>
+<label for="contentafb440e6d02a81e6fe0710d2bc889edc">Комментарий: <span style="font-weight:bold; color:#FF0000">*</span><br>
+	<textarea tabindex="13922" name="content" cols="50" rows="4" id="contentafb440e6d02a81e6fe0710d2bc889edc"></textarea>
+	</label><br>
+	
+	<div style="float:right;width:100px;"></div>
+	<input tabindex="13923" name="submit" class="button-my green" value="Отправить" type="submit">
+	 
+	</fieldset>
+</form>	
+
+</div>
+
+<div class="comments">
+<?if(count($this->comments)>0):?>
+	<?foreach($this->comments as $data):?>
+	
+    <? echo'<div class="jot-row jot-row-alt" ><div class="jot-comment"><div class="jot-user">'.htmlspecialchars(strip_tags($data['comment_name'])).'</div><div class="jot-content"><div class="jot-posticon"><img src="/usr/img/newdoc.gif" width="16" height="16" alt="Комментарий" border="0"></div><div class="jot-mod"></div><span class="jot-poster"><b>Ответ #'.$data['comment_id'].'дата :&nbsp;</b>'.K_Date::dateDotted($data['comment_date']).'</span><hr><div class="jot-message">'.htmlspecialchars(strip_tags($v['comment_content'])).'</div><div class="jot-extra"><a target="_blank" href="http://www.ripe.net/perl/whois?searchtext='.long2ip( $data['comment_ip'] ).'">'.long2ip( $data['comment_ip'] ).'</a></div></div></div></div>';
+		?>
+
+	<?endforeach;?>
+<?endif;?>
+</div>

@@ -1,0 +1,29 @@
+<section class="all-items">
+	<?php foreach ($this->news as $v){ ?>
+		<article class="one-item">
+			<header class="one-item-title">
+				<h4><?= $v['header'] ?></h4>
+				<aside class="one-item-date"><?= date('m.d.Y', strtotime($v['date'])) ?></aside>
+			</header>
+			<div class="one-item-main">
+				<? if(isset($v['img']) && !empty($v['img'])){?>
+					<img src="http://allotaxi.od.ua/upload/<?= $v['img'] ?>" width="150px" alt="">
+				<? } else{ ?>
+					<img src="/usr/img/default-news.jpg" width="150px" alt="">
+				<? } ?>
+				<div class="one-item-text">
+					<?= K_String::trunc(strip_tags($v['content']), 250) ?>
+				</div>
+			</div>
+			<a class="btn yellow-btn" href="/<?= $v['tree_name'] ?>">
+				Подробнее
+			</a>
+			<div class="clear"></div>
+		</article>
+	<? } ?>
+</section>
+<?
+$cleanUrl = preg_replace('/[\?\&]page=\d*/si', '', $_SERVER['REQUEST_URI']);
+
+echo K_paginator::simple($this->page, $this->pages, $cleanUrl.(strpos($cleanUrl, '?') === false ? '?' : '&').'page={#}');
+?>

@@ -1,0 +1,24 @@
+<section class="vacancies">
+	<header class="vacancies-title">
+		<h3 class="yellow">Вакансии</h3>
+		Добро пожаловать <br> в алло такси!
+	</header>
+
+	<? foreach ($this->vacancies as $vacancy){ ?>
+		<article class="one-vacancy">
+			<header class="one-vacancy-title">
+				<h4><?= $vacancy['name'] ?></h4>
+				<a class="btn yellow-btn" href="/<?= $vacancy['tree_name'] ?>">
+					Подробнее
+				</a>
+			</header>
+			<div class="one-vacancy-text">
+				<?= K_String::trunc(strip_tags($vacancy['text']), 200); ?>
+			</div>
+		</article>
+	<? } ?>
+
+	<a class="foot-all" href="/taxi-work">
+		Все вакансии
+	</a>
+</section>

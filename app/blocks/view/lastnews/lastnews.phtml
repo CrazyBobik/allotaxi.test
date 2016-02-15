@@ -1,0 +1,26 @@
+<section class="foot-news">
+	<h3 class="foot-news-title">
+		Последние <br> новости
+	</h3>
+
+	<? foreach ($this->news as $new){ ?>
+		<a href="/<?= $new['tree_name'] ?>">
+			<article class="foot-news-one">
+				<h4 class="news-one-title"><?= $new['tree_title'] ?></h4>
+
+				<div class="news-one-context">
+					<div class="news-context-data">
+						<div class="news-data-numbers"><?= date('d', strtotime($new['date'])) ?></div>
+						<div class="news-data-numbers"><?= date('m', strtotime($new['date'])) ?></div>
+					</div>
+					<div class="news-context-text">
+						<?= K_String::trunc(strip_tags($new['content']), 150) ?>
+					</div>
+				</div>
+			</article>
+		</a>
+	<? } ?>
+
+
+	<a class="foot-all" href="/taxi-novosti">Все новости</a>
+</section>

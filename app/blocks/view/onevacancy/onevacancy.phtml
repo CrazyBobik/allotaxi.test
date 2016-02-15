@@ -1,0 +1,10 @@
+<div class="seo-text">
+	<? if(isset($this->one['img']) && !empty($this->one['img'])){?>
+		<img class="float-left" src="http://allotaxi.od.ua/upload/<?= $this->one['img'] ?>" alt="">
+	<? } else{ ?>
+		<img class="float-left" src="/usr/img/default-work.jpg" alt="">
+	<? } ?>
+
+	<?= $this->one['text'] ?>
+	<div class="clear"></div>
+</div>

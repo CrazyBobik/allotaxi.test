@@ -1,0 +1,41 @@
+<div class="seo-text">
+	<?= $this->item['content'] ?>
+
+	<?php if (K_Url::get()->expPath[0] === 'taxi-contact-us'){ ?>
+		<div class="vcard">
+			<div class="fn org alo-taxi">
+				Диспетчерская служба Алло Такси
+			</div>
+			<div class="contact-one">
+				<div class="adr">
+					<div class="contact-street">
+						<span class="street-address">ул. Малая Арнаутская, 88</span>, <span class="locality">г. Одесса, Одесская область, 65007</span>
+					</div>
+				</div>
+
+				<div class="label-key">
+					Телефоны:
+				</div>
+				<div class="label-value contact-tel">
+					<div class="telephone">
+						<div class="sprite home"></div>
+						<span class="tel">048-733-5000</span>
+					</div>
+					<div class="telephone">
+						<div class="sprite kievstar"></div>
+						<span class="tel">097-802-3222</span>
+					</div>
+					<div class="telephone">
+						<div class="sprite mts"></div>
+						<span class="tel">066-976-3222</span>
+					</div>
+					<div class="telephone">
+						<div class="sprite life"></div>
+						<span class="tel">093-970-3222</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		Время работы: Круглосуточно
+	<?php } ?>
+</div>

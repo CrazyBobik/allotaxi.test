@@ -1,0 +1,65 @@
+AddDefaultCharset utf-8
+
+php_flag zlib.output_compression Off
+
+
+<IfModule mod_rewrite.c>
+
+	#Зеркало без www
+	Options +SymLinksIfOwnerMatch
+	RewriteEngine On
+	RewriteBase /
+	
+	RewriteRule ^(.+)/$ $1 [R=301,L]
+	
+	RewriteCond %{HTTP_HOST} ^www.allotaxi.od.ua$ [NC]
+	RewriteRule ^(.*)$ http://allotaxi.od.ua$1 [R=301,L]
+	
+	RewriteCond %{HTTP_HOST} ^www.allotaxi.od.ua/$ [NC]
+	RewriteRule ^(.*)/$ http://allotaxi.od.ua$1 [R=301,L]
+	
+	RewriteRule ^taxi-home$ $1 [R=301,L]
+		
+	#Картинки которые идут чререз phpThumb 
+	RewriteRule images\/(.*)[?]?(.*)$ "image.php?src=$1&$2" [QSA,L]
+	RewriteRule image\.php(.*)$ "image.php$1" [QSA,L]
+	#RewriteRule cli\.php(.*)$ "cli.php$1" [QSA,L]
+	#RewriteRule sitemap\.xml(.*)$ "sitemap.xml$1" [QSA,L]
+	
+	#исправляем если юзер ошибся и написал html
+	RewriteRule ^(.*).html$ $1.htm [R=permanent]
+	
+	#редирект с index
+	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+	RewriteRule ^index\.php$ http://allotaxi.od.ua [R=301,L]
+	
+	RewriteCond %{REQUEST_URI} !/adm/plugins/ckfinder/ckfinder.html(.*)
+	RewriteCond %{REQUEST_URI} !/adm/plugins/ckfinder/core/connector/php/connector.php(.*)
+	
+	RewriteRule !\.(html|js|css|swf|eot|woff|ttf|svg|xml|ico|ICO|txt|TXT|gif|GIF|jpg|JPG|png|PNG|pdf|PDF|zip|ZIP)$ index.php [L]
+	
+	ErrorDocument 404 /404
+
+</IfModule>
+
+Options -Indexes
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off
+php_flag short_open_tag on
+
+
+<Files "*.ini">
+	Order allow,deny
+	Deny from all
+</Files>
+
+<Files "*.tmp">
+	Order allow,deny
+	Deny from all
+</Files>
+
+<Files "*.inc">
+	Order allow,deny
+	Deny from all
+</Files>

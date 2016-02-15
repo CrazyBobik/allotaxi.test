@@ -1,0 +1,29 @@
+<section class="all-items">
+	<?php foreach ($this->vacancies as $vacancy){ ?>
+		<article class="one-item">
+			<header class="one-item-title">
+				<h4><?= $vacancy['name'] ?></h4>
+			</header>
+			<div class="one-item-main">
+				<? if(isset($v['img']) && !empty($v['img'])){?>
+					<img src="http://allotaxi.od.ua/upload/<?= $v['img'] ?>" width="150px" alt="">
+				<? } else{ ?>
+					<img src="/usr/img/default-work.jpg" width="150px" alt="">
+				<? } ?>
+				<div class="one-item-text">
+					<?= K_String::trunc(strip_tags($vacancy['text']), 250); ?>
+				</div>
+			</div>
+			<a class="btn yellow-btn" href="/<?= $vacancy['tree_name'] ?>">
+				Подробнее
+			</a>
+			<div class="clear"></div>
+		</article>
+	<? } ?>
+</section>
+
+<?
+$cleanUrl = preg_replace('/[\?\&]page=\d*/si', '', $_SERVER['REQUEST_URI']);
+
+echo K_paginator::simple($this->page, $this->pages, $cleanUrl.(strpos($cleanUrl, '?') === false ? '?' : '&').'page={#}');
+?>

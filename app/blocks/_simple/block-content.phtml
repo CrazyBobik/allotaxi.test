@@ -1,0 +1,12 @@
+<? if ($node['name']):
+	K_Registry::write('h1', $node['name']) ?>
+
+	<!--<h1><? /*=$node['name']*/
+	?></h1>-->
+
+<? endif; ?>
+<section class="seo-container">
+	<div class="seo-text">
+		<?= $node['content'] ?>
+	</div>
+</section>

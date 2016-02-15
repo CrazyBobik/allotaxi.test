@@ -1,0 +1,86 @@
+.sprite{background: url("/usr/img/sprite.png") no-repeat}
+.sprite.life{
+    margin: 0 10px;
+    width: 107px;
+    height: 32px;
+    background-position: 0 0;
+}
+.sprite.kievstar{
+    margin: 0 10px;
+    width: 107px;
+    height: 34px;
+    background-position: 0 -33px;
+}
+.sprite.mts{
+    margin: 0 10px;
+    width: 87px;
+    height: 34px;
+    background-position: 0 -69px;
+}
+.sprite.home{
+    margin: 0 10px;
+    width: 47px;
+    height: 34px;
+    background-position: 0 -104px;
+}
+.sprite.advant-icon{
+    width: 105px;
+    height: 105px;
+    min-width: 105px;
+    transition: background-position 0s ease-in 0.25s, transform .5s ease-in-out;
+}
+.one-advant:hover .sprite.advant-icon{transform: rotateY(180deg);}
+.sprite.speed{background-position: -110px 0;}
+.one-advant:hover .sprite.speed{background-position: -110px -105px;}
+.sprite.transport{background-position: -216px 0;}
+.one-advant:hover .sprite.transport{background-position: -216px -105px;}
+.sprite.price{background-position: -323px 0;}
+.one-advant:hover .sprite.price{background-position: -323px -105px;}
+.sprite.bonus{background-position: -431px 0;}
+.one-advant:hover .sprite.bonus{background-position: -431px -105px;}
+.sprite.trucking{background-position: -540px 0;}
+.one-advant:hover .sprite.trucking{background-position: -540px -105px;}
+.sprite.pay{background-position: -648px 0;}
+.one-advant:hover .sprite.pay{background-position: -648px -105px;}
+
+.social-item-img{
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+}
+.social-item-img.social-item-vk{background-position: 0 -140px;}
+.social-item-img.social-item-fb{background-position: 0 -175px;}
+.social-item-img.social-item-tt{background-position: -33px -140px;}
+
+.foot-phone-img{
+    margin-right: 10px;
+}
+.foot-phone-img.foot-life{
+    width: 70px;
+    height: 21px;
+    background-position: 0 -214px;
+}
+.foot-phone-img.foot-kievstar{
+    width: 71px;
+    height: 21px;
+    background-position: -75px -214px;
+}
+.foot-phone-img.foot-mts{
+    width: 60px;
+    height: 21px;
+    background-position: -148px -214px;
+}
+.foot-phone-img.foot-home{
+    width: 32px;
+    height: 21px;
+    background-position: -211px -214px;
+}
+
+.pag-arr{
+    width: 12px;
+    height: 19px;
+    background-position: -50px -105px;
+}
+.pag-arr.right{
+    transform: scaleX(-1);
+}

@@ -1,0 +1,242 @@
+@media screen and (max-width: 999px) {
+    .menu-bg-left,
+    .left-phones,
+    .right-phones,
+    .one-advant-title br,
+    .one-advant .btn,
+    .left-foot-second{
+        display: none;
+    }
+
+    .logo-order {
+        order: 0;
+    }
+
+    .logo-bg {
+        padding: 0;
+        width: 112px;
+        height: 52px;
+        background: none;
+    }
+
+    #main-menu {
+        padding-right: 59px;
+        height: 59px;
+    }
+
+    .main-menu-item {
+        padding: 20px 0;
+        display: none;
+        order: 1;
+    }
+
+    .main-menu-item.active,
+    .responsive{
+        display: block;
+    }
+
+    /*Animation toggle menu*/
+    .toggle-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+        order: 1;
+        width: 59px;
+        height: 59px;
+        background-color: #e8c43c;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .toggle-menu span {
+        position: absolute;
+        top: 29px;
+        left: 10px;
+        right: 10px;
+        display: block;
+        height: 4px;
+        background-color: #fff;
+        transition: background-color .3s ease-in-out .3s;
+    }
+    .toggle-menu span::before,
+    .toggle-menu span::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        content: "";
+        transition: bottom .3s ease-in-out .3s, top .3s ease-in-out .3s, transform .3s ease-in-out 0s;
+    }
+    .toggle-menu span::before {
+        top: -15px;
+    }
+    .toggle-menu span::after {
+        bottom: -15px;
+    }
+    .toggle-menu.active span {
+        background: none;
+        transition: background-color .3s ease-in-out 0s;
+    }
+    .toggle-menu.active span::before,
+    .toggle-menu.active span::after{
+        transition: bottom .3s ease-in-out 0s, top .3s ease-in-out 0s, transform .3s ease-in-out 0.3s;
+    }
+    .toggle-menu.active span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .toggle-menu.active span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    .menu-resp-item{
+        margin: 1px 0;
+        position: relative;
+        display: block;
+        padding: 15px;
+        font-size: 16px;
+        color: #32353c;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: #e8c43c;
+    }
+    .menu-resp-item-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transform: scale(1,0);
+        transition: transform 0.3s ease-in-out;
+    }
+    .menu-resp-item:hover .menu-resp-item-bg,
+    .menu-resp-item.active .menu-resp-item-bg{
+        transform: scale(1,1);
+    }
+
+    .phones{
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        background: none;
+        background-color: #E6E6E6;
+    }
+    .one-phone{
+        margin: 8px 0;
+        width: 326px;
+        justify-content: flex-end;
+    }
+
+    .page-head{
+        padding: 5px;
+    }
+
+    .advant{
+        flex-direction: column;
+    }
+    .one-advant{
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-bottom: solid 1px #a6a6a6;
+    }
+    .one-advant-content{
+        margin-left: 10px;
+        width: 100%;
+    }
+    .one-advant-title{
+        margin-top: 0;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .one-advant-text{
+        margin: 5px 0;
+    }
+}
+@media screen and (max-width: 910px) {
+    .foot-vk,
+    .one-vacancy-text,
+    .news-one-context{
+        display: none;
+    }
+    .main-foot-first{
+        flex-wrap: wrap;
+    }
+    .foot-news-title,
+    .vacancies-title{
+        height: 90px;
+    }
+    .vacancies,
+    .foot-news{
+        margin-bottom: 15px;
+    }
+    .news-one-title{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .foot-second-content > img{
+        display: none;
+    }
+    .phones{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .one-phone{
+        width: 295px;
+    }
+    .price-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width: 610px) {
+    .foot-second-content .social{
+        display: none;
+    }
+    .foot-second-content{
+        flex-wrap: wrap;
+    }
+    .foot-news-title{
+        height: 65px;
+    }
+
+    .telephone{
+        min-width: 275px;
+        width: auto;
+    }
+
+    .one-item-date{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .one-item-text{
+        display: none;
+    }
+    .one-item-main{
+        justify-content: center;
+    }
+    .one-item .btn{
+        float: none;
+        margin: 10px auto 0;
+    }
+    .seo-text img{
+        width: 250px !important;
+        height: auto !important;
+    }
+}
